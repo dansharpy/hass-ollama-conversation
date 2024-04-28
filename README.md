@@ -52,7 +52,7 @@ Settings relating to the integration itself.
 | Option                   | Description                                                                                                                                                                                                         |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | API Timeout              | The maximum amount of time to wait for a response from the API in seconds                                                                                                                                           |
-| Keep Alive               | The amount of time in minutes the model should stay loaded in memory after a request (-1 stay loaded indefinitely, 0 unload immediately after request)                                                              |
+| Keep Alive               | The amount of time in seconds the model should stay loaded in memory after a request (-1 stay loaded indefinitely, 0 unload immediately after request)                                                              |
 
 #### System Prompt
 The starting text for the AI language model to generate new text from. This text can include information about your Home Assistant instance, devices, and areas and is written using Home Assistant Templating.
