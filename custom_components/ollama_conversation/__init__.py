@@ -198,6 +198,7 @@ class OllamaAgent(conversation.AbstractConversationAgent):
     ):
         """Process a sentence."""
         model = self.entry.options.get(CONF_MODEL, DEFAULT_MODEL)
+        keep_alive = self.entry.options.get(CONF_KEEP_ALIVE, DEFAULT_KEEP_ALIVE)
 
         LOGGER.debug("Prompt for %s: %s", model, messages["prompt"])
 
@@ -206,7 +207,7 @@ class OllamaAgent(conversation.AbstractConversationAgent):
             "context": messages["context"],
             "system": messages["system"],
             "prompt": messages["prompt"],
-            "keep_alive": self.entry.options.get(CONF_KEEP_ALIVE, DEFAULT_KEEP_ALIVE),
+            "keep_alive": keep_alive,
             "stream": False,
             "options": {
                 "mirostat": int(self.entry.options.get(CONF_MIROSTAT_MODE, DEFAULT_MIROSTAT_MODE)),
