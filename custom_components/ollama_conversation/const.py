@@ -10,6 +10,7 @@ MENU_OPTIONS = ["general_config", "model_config", "prompt_system"]
 
 CONF_BASE_URL = "base_url"
 CONF_TIMEOUT = "timeout"
+CONF_KEEP_ALIVE = "keep_alive"
 CONF_MODEL = "chat_model"
 CONF_CTX_SIZE = "ctx_size"
 CONF_MAX_TOKENS = "max_tokens"
@@ -24,6 +25,7 @@ CONF_PROMPT_SYSTEM = "prompt"
 
 DEFAULT_BASE_URL = "http://homeassistant.local:11434"
 DEFAULT_TIMEOUT = 60
+DEFAULT_KEEP_ALIVE = 0
 DEFAULT_MODEL = "llama2:latest"
 DEFAULT_CTX_SIZE = 2048
 DEFAULT_MAX_TOKENS = 128
