@@ -27,6 +27,7 @@ from .const import (
 
     CONF_BASE_URL,
     CONF_TIMEOUT,
+    CONF_KEEP_ALIVE,
     CONF_MODEL,
     CONF_CTX_SIZE,
     CONF_MAX_TOKENS,
@@ -41,6 +42,7 @@ from .const import (
 
     DEFAULT_BASE_URL,
     DEFAULT_TIMEOUT,
+    DEFAULT_KEEP_ALIVE,
     DEFAULT_MODEL,
     DEFAULT_CTX_SIZE,
     DEFAULT_MAX_TOKENS,
@@ -71,6 +73,7 @@ DEFAULT_OPTIONS = types.MappingProxyType(
     {
         CONF_BASE_URL: DEFAULT_BASE_URL,
         CONF_TIMEOUT: DEFAULT_TIMEOUT,
+        CONF_KEEP_ALIVE: DEFAULT_KEEP_ALIVE,
         CONF_MODEL: DEFAULT_MODEL,
         CONF_CTX_SIZE: DEFAULT_CTX_SIZE,
         CONF_MAX_TOKENS: DEFAULT_MAX_TOKENS,
@@ -222,6 +225,11 @@ def ollama_schema_general_config(options: MappingProxyType[str, Any]) -> dict:
             CONF_TIMEOUT,
             description={"suggested_value": options.get(CONF_TIMEOUT, DEFAULT_TIMEOUT)},
             default=DEFAULT_TIMEOUT,
+        ): int,
+        vol.Optional(
+            CONF_KEEP_ALIVE,
+            description={"suggested_value": options.get(CONF_KEEP_ALIVE, DEFAULT_KEEP_ALIVE)},
+            default=DEFAULT_KEEP_ALIVE,
         ): int,
     }
 
