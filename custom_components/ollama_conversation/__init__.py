@@ -22,6 +22,7 @@ from .const import (
 
     CONF_BASE_URL,
     CONF_TIMEOUT,
+    CONF_KEEP_ALIVE,
     CONF_MODEL,
     CONF_CTX_SIZE,
     CONF_MAX_TOKENS,
@@ -35,6 +36,7 @@ from .const import (
     CONF_PROMPT_SYSTEM,
 
     DEFAULT_TIMEOUT,
+    DEFAULT_KEEP_ALIVE,
     DEFAULT_MODEL,
     DEFAULT_CTX_SIZE,
     DEFAULT_MAX_TOKENS,
@@ -204,6 +206,7 @@ class OllamaAgent(conversation.AbstractConversationAgent):
             "context": messages["context"],
             "system": messages["system"],
             "prompt": messages["prompt"],
+            "keep_alive": self.entry.options.get(CONF_KEEP_ALIVE, DEFAULT_KEEP_ALIVE),
             "stream": False,
             "options": {
                 "mirostat": int(self.entry.options.get(CONF_MIROSTAT_MODE, DEFAULT_MIROSTAT_MODE)),
