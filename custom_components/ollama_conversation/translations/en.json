@@ -30,7 +30,8 @@
             "general_config": {
                 "title": "General Settings",
                 "data": {
-                    "timeout": "API Timeout"
+                    "timeout": "API Timeout",
+                    "keep_alive": "Keep Alive"
                 }
             },
             "model_config": {
